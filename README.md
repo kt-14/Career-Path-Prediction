@@ -71,6 +71,8 @@ career_path_predictor/
 ### Career Categories:
 - Network Security Engineer, Software Engineer, UX Designer, Software Developer, Database Developer, QA/Testing, Web Developer, CRM Developer, Technical Support, Systems Security Administrator, Applications Developer, Mobile Applications Developer
 
+---
+
 ## Model Summary
 
 | Model           | Accuracy |  Status   | 

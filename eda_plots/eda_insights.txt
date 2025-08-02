@@ -1,0 +1,38 @@
+EDA INSIGHTS SUMMARY
+==================================================
+
+Dataset Shape: (6901, 20)
+Career Distribution:
+Suggested Job Role
+Network Security Engineer                    630
+Software Engineer                            590
+UX Designer                                  589
+Software Developer                           587
+Database Developer                           581
+Software Quality Assurance (QA) / Testing    571
+Web Developer                                570
+CRM Technical Developer                      567
+Technical Support                            565
+Systems Security Administrator               562
+Applications Developer                       551
+Mobile Applications Developer                538
+Name: count, dtype: int64
+
+Skills Averages:
+Logical quotient rating    4.991016
+coding skills rating       5.010723
+public speaking points     4.988263
+dtype: float64
+
+Top Correlated Features:
+Suggested Job Role                     1.000000
+Introvert                              0.030263
+certifications                         0.018000
+workshops                              0.017882
+Taken inputs from seniors or elders    0.017435
+worked in teams ever?                  0.015831
+coding skills rating                   0.015800
+public speaking points                 0.009228
+interested career area                 0.009005
+reading and writing skills             0.008561
+Name: Suggested Job Role, dtype: float64

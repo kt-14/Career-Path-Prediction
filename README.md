@@ -1,20 +1,21 @@
 # Career Path Prediction and Guidance System using Deep Learning
 
-This project aims to guide students in selecting the most suitable career path by analyzing their academic, technical, and behavioral attributes using machine learning and deep learning models.
+This project aims to guide students in selecting the most suitable career path by analyzing their academic, technical, and behavioral attributes using machine learning and deep learning models deployes via a user-friendly web interface.
 
 ---
 
 ## Project Overview
 
 - Predicts suitable career roles for students based on their profile
-- Built using deep learning (Keras MLP) and deployed via a Streamlit web app
+- Built using multiple machine learning algorithms including Random Forest, Gradient Boosting, deep learning (Keras MLP)
+- Deployed via a Streamlit web app for real-time predictions
 - Recommends relevant courses based on the predicted career
 
 ---
 
 ## Problem Statement
 
-> The tool, Career Path Prediction and Guidance System, evaluates student data (skills, interests, academic performance) using deep learning to suggest the most suitable professional tracks. It also provides a recommendation of relevant courses for future growth.
+> The Career Path Prediction System evaluates student records including skills, interests, academic performance, and extracurricular activities using machine learning concepts to provide professional career recommendations. The system guides students on which academic track to pursue and provides actionable plans toward achieving their occupational goals.
 
 ---
 
@@ -22,12 +23,15 @@ This project aims to guide students in selecting the most suitable career path b
 
 ```
 career_path_predictor/
+├── eda.py                    # Exploratory Data Analysis
 ├── train_model.py            # Train ML/DL models
 ├── app.py                    # Streamlit app interface
-├── career_dl_model.h5        # Saved deep learning model
-├── label_encoders_dl.pkl     # Encoders for categorical features
-├── scaler_dl.pkl             # Scaler for input normalization
+├── career_best_model.pkl        # Saved deep learning model
+├── label_encoders.pkl     # Encoders for categorical features
+├── scaler.pkl             # Scaler for input normalization
 ├── PS2_Dataset.csv           # Dataset used for training
+├── eda_plots/               # Generated EDA visualizations
+├── requirements.txt         # Python dependencies
 ├── README.md                 # Project documentation
 ```
 
@@ -37,20 +41,45 @@ career_path_predictor/
 
 - **Python**
 - **TensorFlow / Keras**
-- **Pandas & Scikit-learn**
-- **Streamlit** (for frontend)
-- **Joblib** (for saving encoders & scalers)
+- **Scikit-learn**
+- **Pandas & NumPy**
+- **Streamlit** 
+
+## Supporting Libraries
+
+- **Matplotlib & Seaborn** - Data visualization
+- **Plotly** - Interactive charts
+- **Imbalanced-learn** - SMOTE for class balancing
+- **Pickle** - Model serialization
 
 ---
 
+## Dataset Description
+
+# Dataset Characteristics:
+
+- Total Records: 6,901 student profiles
+- Features: 20 total (19 input features + 1 target variable)
+- Data Quality: No missing values
+- Target Classes: 12 distinct career paths
+
+# Feature Categories:
+
+- Numerical Features (4): Logical quotient rating, hackathons attended, coding skills rating, public speaking points
+- Categorical Features (16): Self-learning capability, certifications, workshops, management vs technical preference, interested subjects, career area preferences, and more
+
+# Career Categories:
+- Network Security Engineer, Software Engineer, UX Designer, Software Developer, Database Developer, QA/Testing, Web Developer, CRM Developer, Technical Support, Systems Security Administrator, Applications Developer, Mobile Applications Developer
+
 ## Model Summary
 
-| Model Used      | Accuracy  |
-|-----------------|-----------|
-| RandomForest    | ~8.5%     |
-| MLP (Keras)     | ~9.0%     |
+| Model           | Accuracy |  Status   | 
+|-----------------|----------|-----------|
+| Gradient Boost  |   78%    | Selected  |
+| RandomForest    |   76%    | Baseline  |
+| MLP (Keras)     |   39%    | Evaluated |
 
-> Accuracy is low due to poor feature-label correlation in the dataset. However, the focus of the project was on building a complete ML pipeline and real-time deployment.
+> Traditional ensemble methods outperformed deep learning for this tabular dataset. Gradient Boosting Classifier selected as final model based on comprehensive evaluation
 
 ---
 
@@ -63,18 +92,7 @@ career_path_predictor/
 
 ---
 
-## Sample Recommended Careers
-
-| Predicted Career             | Recommended Courses                           |
-|-----------------------------|-----------------------------------------------|
-| Data Analyst / Scientist    | Python, SQL, Machine Learning                 |
-| Web Developer               | HTML, CSS, JavaScript, React, Node.js         |
-| System Engineer             | OS, C/C++, DBMS, Comp Architecture            |
-| Network Administrator       | Networking, CCNA, Protocols                   |
-
----
-
-## How to Run
+## Setup Instructions
 
 1. Clone this repo:
    ```bash
@@ -87,16 +105,27 @@ career_path_predictor/
    pip install -r requirements.txt
    ```
 
-3. Run Streamlit app:
+3. Run exploratory data analysis (optional):
    ```bash
-   streamlit run app.py
+   python eda.py
    ```
+
+4. Train models (optional - pre-trained models included):
+   ```bash
+   python train_model.py
+   ```
+
+5. Run Streamlit app:
+   ```bash
+   python -m streamlit run app.py
+   ```
+6. Access the application at http://localhost:8501
 
 ---
 
 ## Future Scope
 
-- Collect better-labeled data from real students
+- Implement advanced ensemble and deep learning techniques
 - Add resume parsing using NLP
 - Deploy to Streamlit Cloud / Azure Web Apps
 - Integrate user account management

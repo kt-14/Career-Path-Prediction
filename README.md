@@ -56,19 +56,19 @@ career_path_predictor/
 
 ## Dataset Description
 
-# Dataset Characteristics:
+### Dataset Characteristics:
 
 - Total Records: 6,901 student profiles
 - Features: 20 total (19 input features + 1 target variable)
 - Data Quality: No missing values
 - Target Classes: 12 distinct career paths
 
-# Feature Categories:
+### Feature Categories:
 
 - Numerical Features (4): Logical quotient rating, hackathons attended, coding skills rating, public speaking points
 - Categorical Features (16): Self-learning capability, certifications, workshops, management vs technical preference, interested subjects, career area preferences, and more
 
-# Career Categories:
+### Career Categories:
 - Network Security Engineer, Software Engineer, UX Designer, Software Developer, Database Developer, QA/Testing, Web Developer, CRM Developer, Technical Support, Systems Security Administrator, Applications Developer, Mobile Applications Developer
 
 ## Model Summary

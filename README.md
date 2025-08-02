@@ -98,7 +98,7 @@ career_path_predictor/
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/yourusername/career-path-predictor.git
+   git clone https://github.com/kt-14/Career-Path-Prediction.git
    cd career-path-predictor
    ```
 
